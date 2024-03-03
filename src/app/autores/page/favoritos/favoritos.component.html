@@ -1,17 +1,16 @@
 <h1>Listar Favorito</h1>
 
-<!-- <button type="button" class="btn btn-dark" routerLink="/producto/nuevo">Nuevo</button>
-
-<button type="button"  class="btn btn-primary" routerLink="/producto/formularioreactivonuevo">Nuevo Reactivo</button> -->
-
-<div class="container ">
-
+<h2>total favorito <span>{{total}}</span></h2>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Listar Favorito Atores</h2>
 <table class="table   table-hover">
     <thead class="table-dark">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <th scope="col">ver Orbras</th>
+        <th scope="col">Eliminar</th>
     
       </tr>
     </thead>
@@ -19,7 +18,7 @@
       <tr>
         <th scope="row">{{i+1}}</th>
         <td>{{list}}</td>
-        <td *ngIf="token">
+        <td >
        
         <button type="button" class="btn btn-danger" (click)="Eliminar(i)" >Eliminar</button>
     </td>
@@ -28,5 +27,33 @@
      
     </tbody>
   </table>
+</div>
 
+
+<div class="col-sm-6">
+  <h2>Listar Favorito Obras</h2>
+  <table class="table   table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Eliminar</th>
+      
+        </tr>
+      </thead>
+      <tbody *ngFor="let list of listaObrasFavorito;let i = index">
+        <tr>
+          <th scope="row">{{i+1}}</th>
+          <td>{{list}}</td>
+          <td >
+         
+          <button type="button" class="btn btn-danger" (click)="EliminaroBras(i)" >Eliminar</button>
+      </td>
+      </tr>
+  
+       
+      </tbody>
+    </table>
+  </div>
+</div>
 </div>

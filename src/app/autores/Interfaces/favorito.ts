@@ -1,5 +1,5 @@
 export interface faborito {
-    nombre:string
+    nombre:string[]
    
      
 }

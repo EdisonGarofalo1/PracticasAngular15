@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AutoresService } from '../../services/autores.service';
 import { faborito } from '../../Interfaces/favorito';
 import Swal from 'sweetalert2'
+import { Authors } from '../../Interfaces/autore';
 @Component({
   selector: 'app-autore',
   templateUrl: './autore.component.html',
@@ -11,7 +12,10 @@ export class AutoreComponent {
   constructor(private AutoresService:AutoresService){
 
   }
-  lista:[]=[];
+  lista:Authors={
+
+    authors:[]
+  };
   token:boolean=false;
   ngOnInit():void{
    
@@ -24,9 +28,11 @@ export class AutoreComponent {
 
 
     this.AutoresService.getListarAutores().subscribe(
-    (  resp:any)=>{
-console.log("lista:",resp.authors)
-        this.lista=resp.authors
+    (  resp)=>{
+
+      this.lista=resp
+// console.log("lista:",resp.authors)
+//         this.lista=resp.authors
       }
     )
 
@@ -34,7 +40,7 @@ console.log("lista:",resp.authors)
   }
 
 
-  Guardar( item: faborito){
+  Guardar( item: any){
   
   
 

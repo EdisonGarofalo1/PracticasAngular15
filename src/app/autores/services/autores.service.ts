@@ -3,6 +3,7 @@ import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import {Observable,throwError,catchError} from 'rxjs'
 import { Obras } from '../Interfaces/obras';
 import { Framentos } from '../Interfaces/framentso';
+import { Authors } from '../Interfaces/autore';
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +32,9 @@ export class AutoresService {
     
   }
 private url ='https://poetrydb.org/'
-  getListarAutores(){
+  getListarAutores():Observable<Authors>{
 
-    return this.http.get(this.url+'author').pipe(
+    return this.http.get<Authors>(this.url+'author').pipe(
     catchError(this.handleError)
     );
   }

@@ -12,6 +12,7 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">ver Orbras</th>
+        <th scope="col">Agregar Faborito</th>
     
       </tr>
     </thead>
@@ -19,12 +20,12 @@
       <tr>
         <th scope="row">{{i+1}}</th>
         <td>{{list.title}}</td>
-       
+        <td>
         <button type="button" class="btn btn-primary" routerLink="/navab/autores/framento/{{list.title}}">Selecionar</button>
-
-
-        <!-- <button type="button" class="btn btn-danger" routerLink="/producto/editarfro/{{list.id}}" >editar Reactivo</button>
-        -->
+      </td>
+        <td>
+        <button type="button" class="btn btn-dark" (click)="Guardar(list.title)">Agregar</button>
+      </td>
     </tr>
 
      
