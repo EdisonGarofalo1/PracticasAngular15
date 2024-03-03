@@ -1,0 +1,32 @@
+<h1>Listar Favorito</h1>
+
+<!-- <button type="button" class="btn btn-dark" routerLink="/producto/nuevo">Nuevo</button>
+
+<button type="button"  class="btn btn-primary" routerLink="/producto/formularioreactivonuevo">Nuevo Reactivo</button> -->
+
+<div class="container ">
+
+<table class="table   table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">ver Orbras</th>
+    
+      </tr>
+    </thead>
+    <tbody *ngFor="let list of listafavorito;let i = index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{list}}</td>
+        <td *ngIf="token">
+       
+        <button type="button" class="btn btn-danger" (click)="Eliminar(i)" >Eliminar</button>
+    </td>
+    </tr>
+
+     
+    </tbody>
+  </table>
+
+</div>

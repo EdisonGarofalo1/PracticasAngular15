@@ -1,0 +1,37 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col animated fadeIn fast" *ngFor="let fragmento of listfragmentos; let i=index">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{fragmento.title}}</h5>
+                <p class="card-text">{{fragmento.author}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{fragmento.linecount}}</small>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="col animated fadeIn fast" *ngFor="let fragmento of listfragmentos; let j=index">
+    <table class="table mt-3 animated fadeIn fast">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Obras</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let linea of fragmento.lines; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{linea}}
+                </td>
+                <td>
+
+
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<h1>Listar Autores</h1>
+
+<!-- <button type="button" class="btn btn-dark" routerLink="/producto/nuevo">Nuevo</button>
+
+<button type="button"  class="btn btn-primary" routerLink="/producto/formularioreactivonuevo">Nuevo Reactivo</button> -->
+
+<div class="container ">
+
+<table class="table   table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">ver Orbras</th>
+        <th scope="col">Agregar</th>
+    
+      </tr>
+    </thead>
+    <tbody *ngFor="let list of lista;let i = index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{list}}</td>
+        <td *ngIf="token">
+        <button type="button" class="btn btn-primary" routerLink="/navab/autores/listaObras/{{list}}">Selecionar</button>
+      </td>
+        <td *ngIf="token">
+        
+          <button type="button" class="btn btn-danger" (click)="Guardar(list)" >Agregar</button>
+        </td>
+     
+      
+    </tr>
+
+     
+    </tbody>
+  </table>
+
+</div>
